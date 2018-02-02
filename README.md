@@ -6,19 +6,19 @@
     - We will make sure to that all of the variables referenced will be easily changed for the server (or any other location where the analysis can be run)
 
 # How to run. 
-    1. Create your own paramfile to match your directory structure.
+    1. Edit your paramfile to match your directory structure.
         - binkley_local for Binkley's MacBook Pro
-    2. Load the paramfile in the top of the jupyter notebook by:
+    2. Use the sample jupyter notebook for how to load the param_file data. 
 
-    3. Access the functions by appending the following to the top of your jupyter notebook as well:
+    3. Keep your jupyter notebooks in git directory so we can share our work and progress. 
 
-    4. Keep your jupyter notebooks in git directory so we can share our work. 
-
-    5. The variables in the paramfiles can be accessed by: 
+    4. The variables in the paramfiles can be accessed by: 
         paramDict["   "]
 
 # PARAMETER FILE VARIABLES
-    - largeTmpDir: A directory where the temporary files are kept. 
+    - tmpDir: A directory where the temporary files are kept. 
+    - gtexDir: A directory for the gtex data
+    - vcfDir: A directory for the gtex vcf directory (should be in gtexDir)
 
 # Notes: 
     - Keep files in the git directory small.  (<10mb)
