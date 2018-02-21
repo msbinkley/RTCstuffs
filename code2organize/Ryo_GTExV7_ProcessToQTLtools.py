@@ -35,7 +35,7 @@ _uu8 = lambda *tt: tuple(_u8(t) for t in tt)
 # In[19]:
 
 def get_rpkm_column_indices_vector(outFileName):
-    TPKM = open('/Users/michaelbinkley/Desktop/GTEx/GTEx_Analysis_2016-01-15_v7_RNASeQCv1.1.8_gene_tpm.gct')
+    TPKM = open(paramFile['gtexDir'] + '/GTEx_Analysis_2016-01-15_v7_RNASeQCv1.1.8_gene_tpm.gct')
     fileOUT = open(outFileName, "w")
     TPKM.readline() #Read first line
     TPKM.readline() #Read second line
