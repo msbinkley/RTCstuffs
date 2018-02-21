@@ -21,8 +21,11 @@
 $  git pull
 
 # How to load updates to git. 
+
 $  git add --all
+
 $  git commit -m "Update message here"
+
 $  git push
 
 
