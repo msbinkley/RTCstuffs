@@ -48,3 +48,21 @@ $  git push
     gtex_funcs: Functions for interacting with the GTEx files (VCF, expression, etc). 
     rtc_funcs: Function for running QTLtools RTC functions. 
 
+
+# Interfacing with PLINK or QTLTOOLS using python. 
+
+In the python script type: 
+
+import os
+os.system("plink XXXXXXXX")
+
+or 
+
+import os
+os.system("QTLtools XXXXXX")
+
+This is equivalent to running this on the terminal.
+
+
+
+
