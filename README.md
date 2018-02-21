@@ -54,11 +54,13 @@ $  git push
 In the python script type: 
 
 import os
+
 os.system("plink XXXXXXXX")
 
 or 
 
 import os
+
 os.system("QTLtools XXXXXX")
 
 This is equivalent to running this on the terminal.
