@@ -1,3 +1,5 @@
 tmpDir,/Users/ryosukekita/Desktop/PROJECTS/RESEARCHPROJECTS/RTCrun/tmpDir
 gtexDir,/Users/ryosukekita/Desktop/PROJECTS/RESEARCHPROJECTS/RTCrun/gtexDir
 tmpSmall,tmpSmall
+gtexExpDir,/Users/ryosukekita/Desktop/DesktopFiles/PROJECTS/RESEARCHPROJECTS/tissueSpecificCancer/data/gtex/GTEx_Analysis_v7_eQTL_expression_matrices
+vcfDir,/Users/ryosukekita/Desktop/DesktopFiles/PROJECTS/RESEARCHPROJECTS/RTCrun/vcfDir
