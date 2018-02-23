@@ -66,5 +66,15 @@ os.system("QTLtools XXXXXX")
 This is equivalent to running this on the terminal.
 
 
+# Inputting and outputting files. 
 
+We want all files to be in a directory. 
+To prevent files from being outputted to the current directory, use paramDict["tmpSmall" 
+or 
+create another directory to put your files in (for example, if they are large), specify them in the paramFile and output accordingly. 
+
+You can also create the temporary file and delete within the script. 
+Deleting files using python can be done by the following command: 
+import os
+os.system("rm FILENAME")
 
