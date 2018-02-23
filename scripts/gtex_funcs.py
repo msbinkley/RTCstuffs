@@ -23,6 +23,7 @@ def get_exp_vector(geneName, tissue, gtexExpDir):
             break
     fileIN.close()
     expVector = matchingLine[4:]
+    expVector = [float(x) for x in expVector]
     return expVector, individualNames
 
 
@@ -54,5 +55,19 @@ def get_dos_vector(chrNum, pos, vcfDir):
     proc = subprocess.Popen(command, stdout = subprocess.PIPE)
     output, err = proc.communicate()
     indivs = output.decode().split("\n")[-2].split("\t")[9:]
-    return dosage, indiv
+    return dosage, indivs
+
+
+def filter_and_sort_genotype_vector(genoV, indivGenoV, indivExpV):
+    '''
+    Filters and sorts the genotype Vector so that the indiivduals matching the indivExpVector
+
+    '''
+    indivGenoVIdx = [indivGenoV.index(x) for x in indivExpV]
+    filteredAndSortedGenoV = [genoV[x]  for x in indivGenoVIdx]
+    return filteredAndSortedGenoV
+
+
+
+
 
