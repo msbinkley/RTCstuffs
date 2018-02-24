@@ -3,14 +3,14 @@
 import gzip, os, subprocess 
 
 
-def get_exp_vector(geneName, tissue, gtexExpDir):
+def get_exp_vector(geneName, tissue, gtexDir):
     '''
     Output a vector of expression levels for a given gene and tissue 
 
     Note:  Warning, the order of this expression vector may not be the same as the genotype vector.
     '''
 
-    filePath = gtexExpDir + "/" + tissue + ".v7.normalized_expression.bed.gz"
+    filePath = gtexDir + "/" + tissue + ".v7.normalized_expression.bed.gz"
     fileIN = gzip.open(filePath)
     counter = 0
     matchingLine = ""
@@ -45,10 +45,14 @@ def get_dos_vector(chrNum, pos, vcfDir):
     command = ["tabix", vcfFilePath ,  chrNum + ":" + pos + "-" + pos]
     proc = subprocess.Popen(command, stdout = subprocess.PIPE)
     output, err = proc.communicate()
+    if len(output)==0:
+        print("Error: There is a problem with the tabix output. Check to make sure the vcf file is tabix-indexed. May need to reindex. Exiting. ")
+        sys.exit()
     genotypes = output.decode().split("\t")[9:]
     genotypes = [x.split(":")[0] for x in genotypes]
     dosageSplit = [[int(y) for y in x.split("/")]    for x in genotypes]
     dosage =  [sum(x)    for x in dosageSplit]
+   
 
     print("\tGetting header")
     command = ["tabix", vcfFilePath ,  "-H", chrNum + ":"  + pos + "-" + pos]
@@ -65,7 +69,7 @@ def filter_and_sort_genotype_vector(genoV, indivGenoV, indivExpV):
     '''
     indivGenoVIdx = [indivGenoV.index(x) for x in indivExpV]
     filteredAndSortedGenoV = [genoV[x]  for x in indivGenoVIdx]
-    return filteredAndSortedGenoV
+    return filteredAndSortedGenoV, indivExpV
 
 
 
