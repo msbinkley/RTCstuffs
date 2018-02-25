@@ -4,6 +4,7 @@
 import gtex_funcs as GF
 import ols_funcs as OF
 import scipy.stats
+import load_params as LP
 
 param_file = "param_files/binkley_local.csv" 
 
