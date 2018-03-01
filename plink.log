@@ -1,15 +1,15 @@
 PLINK v1.90b5.2 64-bit (9 Jan 2018)
 Options in effect:
-  --show-tags eQTLcausal.txt
+  --show-tags GWAScausal.txt
   --tag-r2 0.5
   --vcf chr22_subset_gtex.vcf
 
-Hostname: C02K415ZDRVG
+Hostname: DN527t1u.SUNet
 Working directory: /Users/michaelbinkley/Desktop/RTCstuffs
-Start time: Sun Feb 25 12:29:16 2018
+Start time: Wed Feb 28 16:07:13 2018
 
-Random number seed: 1519590556
+Random number seed: 1519862833
 8192 MB RAM detected; reserving 4096 MB for main workspace.
 Error: Failed to open chr22_subset_gtex.vcf.
 
-End time: Sun Feb 25 12:29:16 2018
+End time: Wed Feb 28 16:07:13 2018
