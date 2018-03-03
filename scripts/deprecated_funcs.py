@@ -1,4 +1,4 @@
-def output_coldspot(outfilename):
+def output_coldspot(outfilename, paramDict):
     '''
     This step may not be necessary. But it filters out any eQTLs that are outside of coldspots
     '''
@@ -33,7 +33,7 @@ def output_coldspot(outfilename):
     hotspots.close()
 
 
-def extract_best_eqtl():
+def extract_best_eqtl(paramDict):
     '''
     Need a function to then identify the best eqtl for a given gene. Again, this step may not be necessary
     '''
