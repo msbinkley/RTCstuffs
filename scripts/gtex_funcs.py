@@ -56,6 +56,7 @@ def get_dos_vector(chrNum, pos, vcfDir):
 
     print("\tGetting header")
     command = ["tabix", vcfFilePath ,  "-H", chrNum + ":"  + pos + "-" + pos]
+    print("\tStillok")
     proc = subprocess.Popen(command, stdout = subprocess.PIPE)
     output, err = proc.communicate()
     indivs = output.decode().split("\n")[-2].split("\t")[9:]
