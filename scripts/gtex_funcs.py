@@ -42,12 +42,12 @@ def get_dos_vector(chrNum, pos, vcfDir):
     '''
     print("\tGetting dosage vector for :", chrNum, pos, vcfDir)
     vcfFilePath= vcfDir + "/chr" + chrNum + "_subset_gtex.vcf.gz"
-    command = ["tabix", vcfFilePath ,  chrNum + ":" + pos + "-" + pos]
+    command = ["tabix", vcfFilePath ,  str(chrNum) + ":" + str(pos) + "-" + str(pos)]
     proc = subprocess.Popen(command, stdout = subprocess.PIPE)
     output, err = proc.communicate()
     if len(output)==0:
         print("Error: There is a problem with the tabix output. Check to make sure the vcf file is tabix-indexed. May need to reindex. Exiting. ")
-        sys.exit()
+        #sys.exit()
     genotypes = output.decode().split("\t")[9:]
     genotypes = [x.split(":")[0] for x in genotypes]
     dosageSplit = [[int(y) for y in x.split("/")]    for x in genotypes]
@@ -55,7 +55,7 @@ def get_dos_vector(chrNum, pos, vcfDir):
    
 
     print("\tGetting header")
-    command = ["tabix", vcfFilePath ,  "-H", chrNum + ":"  + pos + "-" + pos]
+    command = ["tabix", vcfFilePath ,  "-H", str(chrNum) + ":"  + str(pos) + "-" + str(pos)]
     print("\tStillok")
     proc = subprocess.Popen(command, stdout = subprocess.PIPE)
     output, err = proc.communicate()

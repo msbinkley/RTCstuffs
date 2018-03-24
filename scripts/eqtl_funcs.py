@@ -20,7 +20,7 @@ def get_eqtl_stats(chrNum, pos, geneName, tissue, paramDict):
     #genoVector, indivGenoVector = GF.get_dos_vector(chrNum, pos, paramDict["vcfDir"])
     expVector, indivExpVector = GF.get_exp_vector(geneName, tissue, paramDict["gtexDir"])
 
-    genoVector, indivGenoVector = GF.get_dos_vector(chrNum, pos, paramDict["gtexDir"])
+    genoVector, indivGenoVector = GF.get_dos_vector(str(chrNum), str(pos), paramDict["gtexDir"])
 
     genoVector, __ = GF.filter_and_sort_genotype_vector(genoVector, indivGenoVector, indivExpVector)
     results = scipy.stats.linregress(genoVector,expVector)
