@@ -68,7 +68,9 @@ def filter_and_sort_genotype_vector(genoV, indivGenoV, indivExpV):
     Filters and sorts the genotype Vector so that the indiivduals matching the indivExpVector
 
     '''
+
     indivGenoVIdx = [indivGenoV.index(x) for x in indivExpV]
+    print(indivGenoVIdx)    
     filteredAndSortedGenoV = [genoV[x]  for x in indivGenoVIdx]
     return filteredAndSortedGenoV, indivExpV
 
