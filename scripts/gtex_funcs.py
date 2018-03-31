@@ -49,17 +49,18 @@ def get_dos_vector(chrNum, pos, vcfDir):
         print("Error: There is a problem with the tabix output. Check to make sure the vcf file is tabix-indexed. May need to reindex. Exiting. ")
         #sys.exit()
     genotypes = output.decode().split("\t")[9:]
+    #print("Genotypes:", genotypes)
     genotypes = [x.split(":")[0] for x in genotypes]
     dosageSplit = [[int(y) for y in x.split("/")]    for x in genotypes]
     dosage =  [sum(x)    for x in dosageSplit]
-   
-
+    
     print("\tGetting header")
     command = ["tabix", vcfFilePath ,  "-H", str(chrNum) + ":"  + str(pos) + "-" + str(pos)]
     print("\tStillok")
     proc = subprocess.Popen(command, stdout = subprocess.PIPE)
     output, err = proc.communicate()
     indivs = output.decode().split("\n")[-2].split("\t")[9:]
+    print("dosage:", dosage)  
     return dosage, indivs
 
 
@@ -70,7 +71,7 @@ def filter_and_sort_genotype_vector(genoV, indivGenoV, indivExpV):
     '''
 
     indivGenoVIdx = [indivGenoV.index(x) for x in indivExpV]
-    print(indivGenoVIdx)    
+    print(genoV)    
     filteredAndSortedGenoV = [genoV[x]  for x in indivGenoVIdx]
     return filteredAndSortedGenoV, indivExpV
 
