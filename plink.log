@@ -4,23 +4,12 @@ Options in effect:
   --tag-r2 0.5
   --vcf /users/michaelbinkley/desktop/GTEx/chr22_subset_gtex.vcf
 
-Hostname: C02K415ZDRVG
+Hostname: C02K415ZDRVG.local
 Working directory: /Users/michaelbinkley/Desktop/RTCstuffs
-Start time: Sat Mar 31 13:49:33 2018
+Start time: Sat Mar 31 21:30:39 2018
 
-Random number seed: 1522529373
+Random number seed: 1522557039
 8192 MB RAM detected; reserving 4096 MB for main workspace.
---vcf: plink-temporary.bed + plink-temporary.bim + plink-temporary.fam written.
-17907 variants loaded from .bim file.
-635 people (0 males, 0 females, 635 ambiguous) loaded from .fam.
-Ambiguous sex IDs written to plink.nosex .
-Using 1 thread (no multithreaded calculations invoked).
-Before main variant filters, 635 founders and 0 nonfounders present.
-Calculating allele frequencies... done.
-Total genotyping rate is 0.995468.
-17907 variants and 635 people pass filters and QC.
-Note: No phenotypes present.
---show-tags: 1 target variant loaded.
---show-tags: Simple tag ID list (164 tags added) written to plink.tags .
+Error: Failed to open /users/michaelbinkley/desktop/GTEx/chr22_subset_gtex.vcf.
 
-End time: Sat Mar 31 13:49:33 2018
+End time: Sat Mar 31 21:30:39 2018
