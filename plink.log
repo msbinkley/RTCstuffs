@@ -4,11 +4,11 @@ Options in effect:
   --tag-r2 0.5
   --vcf /users/michaelbinkley/desktop/GTEx/chr22_subset_gtex_copy.vcf
 
-Hostname: C02K415ZDRVG
+Hostname: DN527t02.SUNet
 Working directory: /Users/michaelbinkley/Desktop/RTCstuffs
-Start time: Thu Apr  5 19:07:35 2018
+Start time: Fri Apr  6 12:07:52 2018
 
-Random number seed: 1522980455
+Random number seed: 1523041672
 8192 MB RAM detected; reserving 4096 MB for main workspace.
 --vcf: plink-temporary.bed + plink-temporary.bim + plink-temporary.fam written.
 17907 variants loaded from .bim file.
@@ -23,4 +23,4 @@ Note: No phenotypes present.
 --show-tags: 1 target variant loaded.
 --show-tags: Simple tag ID list (6 tags added) written to plink.tags .
 
-End time: Thu Apr  5 19:07:35 2018
+End time: Fri Apr  6 12:07:53 2018
