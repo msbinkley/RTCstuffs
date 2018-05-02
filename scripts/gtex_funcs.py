@@ -41,45 +41,6 @@ def get_dos_vector(chrNum, pos, vcfDir):
     TEST SNP:  40051275        22_40051275_G_GC_b37  
     '''
     print("\tGetting dosage vector for :", chrNum, pos, vcfDir)
-    vcfFilePath= vcfDir + "/chr" + chrNum + "_subset_gtex_copy2.vcf.gz"
-    command = ["tabix", vcfFilePath ,  str(chrNum) + ":" + str(pos) + "-" + str(pos)]
-    proc = subprocess.Popen(command, stdout = subprocess.PIPE)
-    output, err = proc.communicate()
-    if len(output)==0:
-        print("Error: There is a problem with the tabix output. Check to make sure the vcf file is tabix-indexed. May need to reindex. Exiting. ")
-        #sys.exit()
-    genotypes = output.decode().split("\t")[9:]
-    #print("Genotypes:", genotypes)
-    genotypes = [x.split(":")[0] for x in genotypes]
-    dosageSplit = [[int(y) for y in x.split("/")]    for x in genotypes]
-    
-    
-    dosage =  [sum(x)    for x in dosageSplit]
-    
-    print("\tGetting header")
-    command = ["tabix", vcfFilePath ,  "-H", str(chrNum) + ":"  + str(pos) + "-" + str(pos)]
-    print("\tStillok")
-    proc = subprocess.Popen(command, stdout = subprocess.PIPE)
-    output, err = proc.communicate()
-    indivs = output.decode().split("\n")[-2].split("\t")[9:]
-   # print("dosage:", dosage)  
-    return dosage, indivs
-
-def get_dos_vector_with_filter_for_missing_individuals(chrNum, pos, vcfDir):
-    '''
-    UNUSED. 
-    Outputs the dosage vector for a particular chromoosome and position. 
-    
-    #Make sure file has a .tbi. 
-    If it doesn't, then do the following: 
-    DN527o9v:vcfDir ryosukekita$ gunzip chr22_subset_gtex.vcf.gz
-    DN527o9v:vcfDir ryosukekita$ bgzip chr22_subset_gtex.vcf
-    DN527o9v:vcfDir ryosukekita$ tabix -p vcf chr22_subset_gtex.vcf.gz
-    DN527o9v:vcfDir ryosukekita$ tabix chr22_subset_gtex.vcf.gz
-
-    TEST SNP:  40051275        22_40051275_G_GC_b37  
-    '''
-    print("\tGetting dosage vector for :", chrNum, pos, vcfDir)
     vcfFilePath= vcfDir + "/chr" + chrNum + "_subset_gtex.vcf.gz"
     command = ["tabix", vcfFilePath ,  str(chrNum) + ":" + str(pos) + "-" + str(pos)]
     proc = subprocess.Popen(command, stdout = subprocess.PIPE)
@@ -90,53 +51,31 @@ def get_dos_vector_with_filter_for_missing_individuals(chrNum, pos, vcfDir):
     genotypes = output.decode().split("\t")[9:]
     #print("Genotypes:", genotypes)
     genotypes = [x.split(":")[0] for x in genotypes]
-
+    dosageSplit = [[int(y) for y in x.split("/")]    for x in genotypes]
+    dosage =  [sum(x)    for x in dosageSplit]
+    
     print("\tGetting header")
     command = ["tabix", vcfFilePath ,  "-H", str(chrNum) + ":"  + str(pos) + "-" + str(pos)]
     print("\tStillok")
     proc = subprocess.Popen(command, stdout = subprocess.PIPE)
     output, err = proc.communicate()
     indivs = output.decode().split("\n")[-2].split("\t")[9:]
-    
-    
-    dosageSplit = [[int(y) for y in x.split("/")]    for x in genotypes if "." not in x.split("/")]
-    dosage =  [sum(x)    for x in dosageSplit]
-    indivs = [indiv for idx,indiv in enumerate(indivs) if "." not in genotypes[idx].split("/")]
-    print("INDIV:", indivs)
    # print("dosage:", dosage)  
     return dosage, indivs
 
 
-
-
 def filter_and_sort_genotype_vector(genoV, indivGenoV, indivExpV):
     '''
-    Filters and sorts the genotype Vector so that the individuals matching the indivExpVector
+    Filters and sorts the genotype Vector so that the indiivduals matching the indivExpVector
 
     '''
 
-    indivGenoVIdx = [indivGenoV.index(x) for x in indivExpV]   
+    indivGenoVIdx = [indivGenoV.index(x) for x in indivExpV]
+  #  print(genoV)    
     filteredAndSortedGenoV = [genoV[x]  for x in indivGenoVIdx]
     return filteredAndSortedGenoV, indivExpV
 
 
-def filter_and_sort_expression_and_genotype_vector(genoV, indivGenoV, expV, indivExpV):
-    '''
-    UNUSED BUT COMPLETE
-    '''
-    
-    common_individuals = [x for x in indivGenoV if x in indivExpV]
-    indivGenoVIdx = [indivGenoV.index(x)  for x in common_individuals]
-    indivExpVIdx = [indivExpV.index(x)  for x in common_individuals]
-    filteredAndSortedGenoV = [genoV[x]  for x in indivGenoVIdx]
-    filteredAndSortedExpV = [expV[x]  for x in indivExpVIdx]
-    return filteredAndSortedGenoV, filteredAndSortedExpV, common_individuals
-
-
-
-
-
-    
 
 
 
