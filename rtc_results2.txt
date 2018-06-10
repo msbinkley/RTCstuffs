@@ -1,2 +1,2 @@
 other_variant our_variant phenotype phenotype_group other_variant_chr other_variant_start other_variant_rank our_variant_chr our_variant_start our_variant_rank phenotype_chr phenotype_start distance_between_variants distance_between_other_variant_and_pheno other_variant_region_index our_variant_region_index region_start region_end variant_count_in_region RTC D' r^2
-22_40520527_C_G_b37 22_40419956_C_T_b37 ENSG00000172404.4 ENSG00000172404.4 22 40520527 0 22 40419956 0 22 41255554 100571 735027 65663 65663 40382501 40525500 403 0.0521092 NA 0.00106693
+22_40474848_T_C_b37 22_40503116_C_T_b37 ENSG00000172404.4 ENSG00000172404.4 22 40474848 0 22 40503116 0 22 41255554 28268 780706 65663 65663 40382501 40525500 403 0.712159 NA 0.935442
