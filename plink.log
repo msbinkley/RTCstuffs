@@ -1,14 +1,14 @@
 PLINK v1.90b5.2 64-bit (9 Jan 2018)
 Options in effect:
-  --show-tags /users/michaelbinkley/desktop/GTEx/GWAScausal.txt
+  --show-tags /users/michaelbinkley/desktop/GTEx/eQTLcausal.txt
   --tag-r2 0.5
   --vcf /users/michaelbinkley/desktop/GTEx/chr22_subset_gtex_copy2.vcf
 
-Hostname: C02K415ZDRVG
+Hostname: DN527oil.SUNet
 Working directory: /Users/michaelbinkley/Desktop/RTCstuffs
-Start time: Sun Jun 10 12:46:38 2018
+Start time: Fri Jun 15 17:05:36 2018
 
-Random number seed: 1528659998
+Random number seed: 1529107536
 8192 MB RAM detected; reserving 4096 MB for main workspace.
 --vcf: plink-temporary.bed + plink-temporary.bim + plink-temporary.fam written.
 11790 variants loaded from .bim file.
@@ -20,6 +20,6 @@ Calculating allele frequencies... done.
 11790 variants and 635 people pass filters and QC.
 Note: No phenotypes present.
 --show-tags: 1 target variant loaded.
---show-tags: Simple tag ID list (112 tags added) written to plink.tags .
+--show-tags: Simple tag ID list (2 tags added) written to plink.tags .
 
-End time: Sun Jun 10 12:46:38 2018
+End time: Fri Jun 15 17:05:36 2018
