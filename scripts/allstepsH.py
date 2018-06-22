@@ -13,7 +13,7 @@ import random
 random.seed(0)
 from random import sample
 
-geneName = "ENSG00000172404.4"
+
     
 ######This step randomly picks an eQTL in the coldspot and the position
 
