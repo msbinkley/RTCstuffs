@@ -6,9 +6,9 @@ Options in effect:
 
 Hostname: C02K415ZDRVG
 Working directory: /Users/michaelbinkley/Desktop/RTCstuffs
-Start time: Thu Jun 21 22:57:42 2018
+Start time: Thu Jun 21 23:01:08 2018
 
-Random number seed: 1529647062
+Random number seed: 1529647268
 8192 MB RAM detected; reserving 4096 MB for main workspace.
 --vcf: plink-temporary.bed + plink-temporary.bim + plink-temporary.fam written.
 11790 variants loaded from .bim file.
@@ -20,6 +20,6 @@ Calculating allele frequencies... done.
 11790 variants and 635 people pass filters and QC.
 Note: No phenotypes present.
 --show-tags: 1 target variant loaded.
---show-tags: Simple tag ID list (6 tags added) written to plink.tags .
+--show-tags: Simple tag ID list (2 tags added) written to plink.tags .
 
-End time: Thu Jun 21 22:57:42 2018
+End time: Thu Jun 21 23:01:08 2018
