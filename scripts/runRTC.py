@@ -1,7 +1,7 @@
 import seaborn as sns
 import matplotlib as mpl
 import matplotlib.pyplot as plt
-%matplotlib inline
+
 import scipy
 from scipy import stats
 import sys
