@@ -71,7 +71,7 @@ def run_RTC(paramDict, geneName, chrNum, pos, tissue):
     slope_r, intercept,  residuals, indivVector = EF.get_eqtl_stats(chrNum, pos, geneName, tissue, paramDict)  
     print("RTC3")
 
-    chrNumLinked = "22"
+    chrNumLinked = chrNum
     ### THIS is the position of the randomly selected
     #posLinked = output_pos_rand_variant(paramDict["gtexDir"] + "linkedeQTLpos.txt", paramDict)
     posLinked = AS.output_pos_rand_variant2(paramDict["gtexDir"] + "linkedeQTLpos.txt", paramDict)
