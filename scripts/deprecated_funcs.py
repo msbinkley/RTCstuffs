@@ -3,7 +3,8 @@ def output_coldspot(outfilename, paramDict):
     This step may not be necessary. But it filters out any eQTLs that are outside of coldspots
     '''
 
-    egene = open(paramDict["gtexDir"] + '/QTLinterest.txt')
+    #egene = open(paramDict["gtexDir"] + '/QTLinterest.txt')
+    egene = open(paramDict["gtexDir"] + '/Breast_Mammary_Tissue.v7.egenes.txt')
     egene.readline()
 
     fileOUT = open(outfilename, "w")
@@ -37,7 +38,8 @@ def extract_best_eqtl(paramDict):
     '''
     Need a function to then identify the best eqtl for a given gene. Again, this step may not be necessary
     '''
-    fileIN = open(paramDict["gtexDir"] + '/QTLinterest.txt')    
+    #fileIN = open(paramDict["gtexDir"] + '/QTLinterest.txt')    
+    fileIN = open(paramDict["gtexDir"] + '/Breast_Mammary_Tissue.v7.egenes.txt')
     fileIN.readline()
     longestGeneCoordinates = list()
     currentLine = fileIN.readline().rstrip().split('\t') 
@@ -80,15 +82,17 @@ def extract_best_eqtl_real(paramDict):
     '''
     Need a function to then identify the best eqtl for a given gene. Again, this step may not be necessary
     '''
-    fileIN = open(paramDict["gtexDir"] + '/QTLinterest.txt')    
+    #fileIN = open(paramDict["gtexDir"] + '/QTLinterest.txt')   
+    fileIN = open(paramDict["gtexDir"] + '/Breast_Mammary_Tissue.v7.egenes.txt')
     fileIN.readline()
     longestGeneCoordinates = list()
     currentLine = fileIN.readline().rstrip().split('\t') 
-    currentGeneCoordinates = [str(currentLine[0]), str(currentLine[2]),float(currentLine[14]), str(currentLine[18]), float(currentLine[23])]#This is a variable that holds the information for the "current" gene.
+    currentGeneCoordinates = [str(currentLine[0]), str(currentLine[2]), float(currentLine[14]), str(currentLine[11]),  str(currentLine[18]), float(currentLine[23])]#This is a variable that holds the information for the "current" gene.
     #"Current" gene is the gene that we are currently working to figuring out the longest coordinates.
     for counter, i in enumerate(fileIN): #Go through each line
         i = i.rstrip().split("\t")
-        i =[str(i[0]), str(i[2]),str(i[11]), float(i[14]), str(i[18]), float(i[23])]
+        if str(i[11])== ' ' : continue
+        i =[str(i[0]), str(i[2]), float(i[14]), str(i[11]),  str(i[18]), float(i[23])]
 
           
         if i[0] == currentGeneCoordinates[0]: #If this line has the same gene as "current" SNP, then continue to compare the coordiantes.
