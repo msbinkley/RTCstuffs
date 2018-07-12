@@ -6,9 +6,9 @@ Options in effect:
 
 Hostname: DN527sco.SUNet
 Working directory: /Users/michaelbinkley/Desktop/RTCstuffs
-Start time: Thu Jul 12 10:07:58 2018
+Start time: Thu Jul 12 10:15:52 2018
 
-Random number seed: 1531415278
+Random number seed: 1531415752
 8192 MB RAM detected; reserving 4096 MB for main workspace.
 --vcf: plink-temporary.bed + plink-temporary.bim + plink-temporary.fam written.
 11790 variants loaded from .bim file.
@@ -20,6 +20,6 @@ Calculating allele frequencies... done.
 11790 variants and 635 people pass filters and QC.
 Note: No phenotypes present.
 --show-tags: 1 target variant loaded.
---show-tags: Simple tag ID list (17 tags added) written to plink.tags .
+--show-tags: Simple tag ID list (111 tags added) written to plink.tags .
 
-End time: Thu Jul 12 10:07:59 2018
+End time: Thu Jul 12 10:15:53 2018
